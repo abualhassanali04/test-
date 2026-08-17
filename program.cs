@@ -1,13 +1,20 @@
 ﻿using System;
+using testing.models;
+using models.prodect;
 
-namespace testing
+
+
+
+public class Program
 {
-    internal class Program
+    public static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-            Console.ReadLine();
-        }
+      Product p1 = new Product(1, "Laptop", 999.99m);
+      Console.WriteLine(p1.Name + " - " + p1.Price);
+      Catogary c1 = new Catogary(1, "Electronics");
+      Console.WriteLine(c1.Name);
+      Add p2 = new Add();
+      Console.WriteLine(p2.add(5, 10));
+
     }
 }
