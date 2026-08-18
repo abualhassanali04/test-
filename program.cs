@@ -13,7 +13,8 @@ public class Program
       List<Catogary> catogaries = new List<Catogary>();
 while (true)
         {
-            Console.WriteLine("\nmenu");
+            Console.WriteLine("\n\tMenu");
+            Console.WriteLine("====================");
             Console.WriteLine("1-Add Product");
             Console.WriteLine("2-Add Catogary");
             Console.WriteLine("3-display all information");
