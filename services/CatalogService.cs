@@ -2,7 +2,13 @@ using models.prodect;
 namespace testing.services;
 
 public class CatalogService : ICatalogService
-{public void AddProduct(Product product)
+{
+    
+    
+    
+    
+    
+    public void AddProduct(Product product)
     {
         
     }

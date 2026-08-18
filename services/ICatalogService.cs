@@ -1,7 +1,7 @@
 using models.prodect;
 namespace testing.services
 {
-    public interface ICatalogService
+     interface ICatalogService
     {
         void AddProduct(Product product);
         IEnumerable<Product> GetProducts();
