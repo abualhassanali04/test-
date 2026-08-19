@@ -1,6 +1,5 @@
-﻿
-using testing.models;
-using models.prodect;
+﻿using models;
+using Validation;
 
 
 
@@ -10,7 +9,7 @@ public class Program
     public static void Main(string[] args)
     {
       List<Product> products = new List<Product>();
-      List<Catogary> catogaries = new List<Catogary>();
+      List<Category> categories = new List<Category>();
 while (true)
         {
             Console.WriteLine("\n\tMenu");
@@ -35,23 +34,32 @@ while (true)
       {
           case "1":
               Console.WriteLine("Enter product details:");
-              Console.Write("Id: ");
-              int productId = int.Parse(Console.ReadLine());
-              Console.Write("Name: ");
-              string productName = Console.ReadLine();
-              Console.Write("Price: ");
-              decimal productPrice = decimal.Parse(Console.ReadLine());
-              products.Add(new Product(productId, productName, productPrice));
+
+              int productId = InputValidator.ReadInt("Id: ");
+
+
+              string productName = InputValidator.ReadNonEmptyString("Name: ");
+              
+              decimal productPrice = InputValidator.ReadDecimal("Price: ");
+                
+                int productStock = InputValidator.ReadInt("Stock: ");
+                DateTime createdAt = DateTime.Now;
+                
+                int productCategoryId = InputValidator.ReadInt("Category Id: ");
+              products.Add(new Product(productId, productName, productPrice,productStock, createdAt, productCategoryId));
               break;
           case "2":
-              Console.Write("Category Id: ");
-              int categoryId = int.Parse(Console.ReadLine());
-              Console.Write("Category Name: ");
-              string categoryName = Console.ReadLine();
-              catogaries.Add(new Catogary(categoryId, categoryName));
+             
+              int categoryId = InputValidator.ReadInt("Category Id: ");
+              
+              string categoryName = InputValidator.ReadNonEmptyString("Category Name: ");
+              categories.Add(new Category(categoryId, categoryName));
               break;
           case "3":
-          Console.WriteLine("products");
+          Console.WriteLine("Displaying all information:");
+          Console.WriteLine("===========================");
+          Console.WriteLine("\tproducts");
+          Console.WriteLine("id - name - price - stock - createdAt");
           if(products.Count == 0)
               {
                 Console.WriteLine("No products available.");
@@ -59,18 +67,20 @@ while (true)
               else
               foreach (var product in products)
               {
-                  Console.WriteLine("id : " + product.Id + " - " + product.Name + " - " + product.Price);
+                  Console.WriteLine( product.Id + " - " + product.Name + " - " + product.Price + "   -   " + product.Stock + " - " + product.CreatedAt );
               }
-              Console.WriteLine("category");
+              Console.WriteLine("===========================");
+              Console.WriteLine("\tcategories");
+              Console.WriteLine("\tid - name");
 
-              if(catogaries.Count == 0)
+              if(categories.Count == 0)
               {
                 Console.WriteLine("No categories available.");
               }
               else
-              foreach (var category in catogaries)
+              foreach (var category in categories)
               { 
-                  Console.WriteLine("id : " + category.Id + " - " + category.Name);
+                  Console.WriteLine("id : " + category.Id + " - " + category.Name );
               }
               break;
           case "4":

@@ -1,14 +1,14 @@
-﻿
-
-namespace testing.models
+﻿namespace models
 {
-    public class Catogary
+    public class Category
     {
-        public int Id; public string Name;
-        public Catogary(int id, string name)
-        {
-            Id = id; Name = name;
+        public int Id { get; set; }
+        public string Name { get; set; }
 
+        public Category(int id, string name)
+        {
+            Id = id;
+            Name = name;
         }
     }
 }

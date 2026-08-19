@@ -1,22 +1,25 @@
-﻿namespace models.prodect
+﻿namespace models
 {
     public class Product
     {
-        public int Id;
-        public string Name;
-        public decimal Price;
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Stock { get; set; }
 
-        public Product(int id, string name, decimal price)
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public int CategoryId { get; set; }
+
+        public Product(int id, string name, decimal price , int stock , DateTime createdAt, int categoryId )
         {
             Id = id;
             Name = name;
             Price = price;
+            Stock = stock;
+            CreatedAt = createdAt;
+            CategoryId = categoryId;
         }
     }
 
-    public class Add    {
-        public int add(int a, int b)
-        { return a + b; }
-       
-    }
+   
 }

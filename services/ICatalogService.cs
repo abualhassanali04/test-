@@ -1,12 +1,18 @@
-using models.prodect;
+using models;
+
 namespace testing.services
 {
-     interface ICatalogService
+    public interface ICatalogService
     {
         void AddProduct(Product product);
+        void AddCategory(Category category);
         IEnumerable<Product> GetProducts();
+        IEnumerable<Category> GetCategories();
         Product? FindProduct(int id);
 
         void RemoveProduct(int id);
+
     }
 }
+
+   
