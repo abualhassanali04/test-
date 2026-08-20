@@ -7,16 +7,16 @@
         public decimal Price { get; set; }
         public int Stock { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime CreatedAt { get; set; }
         public int CategoryId { get; set; }
 
-        public Product(int id, string name, decimal price , int stock , DateTime createdAt, int categoryId )
+        public Product(string name, decimal price , int stock ,  int categoryId )
         {
-            Id = id;
+            
             Name = name;
             Price = price;
             Stock = stock;
-            CreatedAt = createdAt;
+            CreatedAt = DateTime.Now;
             CategoryId = categoryId;
         }
     }
