@@ -16,7 +16,7 @@ The application lets you manage products and categories entirely in memory (no d
 5. **Search product by name** — case-insensitive, partial-match search
 6. **Update product** — edit an existing product's details by Id
 7. **Remove product** — delete a product by Id, with a confirmation prompt
-8. **Reports** (LINQ-based):
+8. **Reports**:
    - Total inventory value (price × stock, summed across all products)
    - Most expensive product
    - Out-of-stock products
@@ -36,7 +36,6 @@ ProductCatalogConsole/
 │   └── CatalogService.cs       # Business logic: add, search, update, remove, reports
 └── Validation/
     └── Validation.cs           # Input validation helpers (safe int/decimal/string reads)
-```
 
 ## Design Notes
 

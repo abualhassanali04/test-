@@ -63,8 +63,6 @@ public class Program
             Console.WriteLine($"{c.Id} - {c.Name}");
     }
 
-
-
                     Console.WriteLine("Enter product details:");
                     string productName = Input.ReadNonEmptyString("Name: ");
                     decimal productPrice = Input.ReadDecimal("Price: ");
@@ -135,23 +133,22 @@ public class Program
                     break;
 
                 case "5":
-                    string searchName = Input.ReadNonEmptyString("Search By Name: ");
-                    
-                    Console.WriteLine($"{"ID" , -5} | {"Product Name ",-15} | {"Price" , -10} | {"STOCk",-10} | {"CategoryName" , -15} | {"CREATED AT ",-15} ");
-                    Console.WriteLine(new string('=',80));
+    string searchName = Input.ReadNonEmptyString("Search By Name: ");
 
-                    var searchResults = catalog.SearchProductsByName(searchName);
-                    if (!searchResults.Any())
-                        Console.WriteLine("No products found.");
-                    else
-                        foreach (var p in searchResults)
-                         foreach (var product in catalog.GetProducts())
-{
-                    var categor = catalog.GetCategories().FirstOrDefault(c => c.Id == product.CategoryId);
-                    string categorName = categor != null ? categor.Name : "Unknown";
-                    Console.WriteLine($"{product.Id,-5} | {product.Name,-15} | {product.Price,-10} | {product.Stock,-10} | {categorName,-15} | {product.CreatedAt,-15}");
-}
-                           break;
+    Console.WriteLine($"{"ID",-5} | {"Product Name ",-15} | {"Price",-10} | {"STOCk",-10} | {"CategoryName",-15} | {"CREATED AT ",-15} ");
+    Console.WriteLine(new string('=', 80));
+
+    var searchResults = catalog.SearchProductsByName(searchName);
+    if (!searchResults.Any())
+        Console.WriteLine("No products found.");
+    else
+        foreach (var p in searchResults)
+        {
+            var categor = catalog.GetCategories().FirstOrDefault(c => c.Id == p.CategoryId);
+            string categorName = categor != null ? categor.Name : "Unknown";
+            Console.WriteLine($"{p.Id,-5} | {p.Name,-15} | {p.Price,-10} | {p.Stock,-10} | {categorName,-15} | {p.CreatedAt,-15}");
+        }
+    break;
 
                 case "6":
                     int UpdateId = Input.ReadInt("Product Id to update: ");
@@ -231,10 +228,9 @@ public class Program
                         Console.WriteLine(new string('=', 84));
                         catalog.PrintCategoryStats();
 
-break;
-
-                        break;
                     
+                    break;
+
                 case "9":
                     Console.WriteLine("Exiting");
                     return;

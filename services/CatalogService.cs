@@ -29,9 +29,9 @@ public class CatalogService : ICatalogService
 
      public Product? FindProduct(int id) => _products.FirstOrDefault(p => p.Id == id);
 
-        public void RemoveProduct(int id) => _products.RemoveAll(p => p.Id == id);
+    public void RemoveProduct(int id) => _products.RemoveAll(p => p.Id == id);
 
-             public IEnumerable<Product> GetProductsByCategory(int categoryId) =>
+    public IEnumerable<Product> GetProductsByCategory(int categoryId) =>
         _products.Where(p => p.CategoryId == categoryId );
 
     public IEnumerable<Product> SearchProductsByName(string name) =>
@@ -70,10 +70,9 @@ public class CatalogService : ICatalogService
 
         Console.WriteLine($"{categoryName,-15} | Count: {count,-5} | Avg Price: {avgPrice:F2}");
     }
+    
 }
-    
 
-    
 } 
 
   
