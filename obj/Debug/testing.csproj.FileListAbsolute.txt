@@ -1,7 +1,0 @@
-C:\Users\abualhassan.ali\source\repos\testing\testing\bin\Debug\testing.exe.config
-C:\Users\abualhassan.ali\source\repos\testing\testing\bin\Debug\testing.exe
-C:\Users\abualhassan.ali\source\repos\testing\testing\bin\Debug\testing.pdb
-C:\Users\abualhassan.ali\source\repos\testing\testing\obj\Debug\testing.csproj.AssemblyReference.cache
-C:\Users\abualhassan.ali\source\repos\testing\testing\obj\Debug\testing.csproj.CoreCompileInputs.cache
-C:\Users\abualhassan.ali\source\repos\testing\testing\obj\Debug\testing.exe
-C:\Users\abualhassan.ali\source\repos\testing\testing\obj\Debug\testing.pdb
